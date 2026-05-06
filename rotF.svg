@@ -1,0 +1,63 @@
+<svg width="600" height="440" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义简单的 -> 箭头标记 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="none" stroke="black" />
+    </marker>
+  </defs>
+
+  <!-- 坐标系 -->
+  <g stroke="black" stroke-width="2" fill="none">
+    <!-- Z轴 -->
+    <line x1="150" y1="360" x2="150" y2="50" />
+    <text x="155" y="40" font-size="20" font-family="sans-serif">z</text>
+
+    <!-- Y轴 -->
+    <line x1="150" y1="360" x2="550" y2="360" />
+    <text x="560" y="375" font-size="20" font-family="sans-serif">y</text>
+
+    <!-- X轴 -->
+    <line x1="150" y1="360" x2="80" y2="430" />
+    <text x="70" y="430" font-size="20" font-family="sans-serif">x</text>
+  </g>
+
+  <!-- 面元矩形 -->
+  <!-- 位置：x=300, y=100, 宽120, 高100 -->
+  <rect x="300" y="100" width="120" height="100" stroke="black" stroke-width="2" fill="none" />
+  <text x="335" y="155" font-size="18" font-family="sans-serif">面元</text>
+
+  <!-- 力 Q 的箭头 (从左向右) -->
+  <!-- 共同尖端 x=295 (矩形左边 x=300 的前面一点点) -->
+  <!-- 长度比例：1:2:3。假设单位长度为20。-->
+  <!-- 长度1 (20): 295-20 = 275 -->
+  <!-- 长度2 (40): 295-40 = 255 -->
+  <!-- 长度3 (60): 295-60 = 235 -->
+
+  <!-- Q1 (上) -->
+  <line x1="235" y1="110" x2="295" y2="110" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- Q2 (中) -->
+  <line x1="255" y1="150" x2="295" y2="150" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- Q3 (下) -->
+  <line x1="275" y1="190" x2="295" y2="190" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 标签 Q -->
+  <text x="235" y="155" font-size="20" font-family="sans-serif" font-weight="bold">Q</text>
+
+  <!-- 力 R 的箭头 (从下向上) -->
+  <!-- 共同尖端 y=95 (矩形底边 y=100 的前面一点点) -->
+  <!-- 长度比例：1:2:3。单位长度20。-->
+  <!-- 长度1 (20): 95+20 = 115 (注意y轴向下为正，所以是往上画，起点y更大) -->
+  <!-- 长度2 (40): 95+40 = 135 -->
+  <!-- 长度3 (60): 95+60 = 155 -->
+
+  <!-- R1 (左) -->
+  <line x1="320" y1="225" x2="320" y2="205" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- R2 (中) -->
+  <line x1="360" y1="245" x2="360" y2="205" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+  <!-- R3 (右) -->
+  <line x1="400" y1="265" x2="400" y2="205" stroke="black" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- 标签 R -->
+  <text x="355" y="265" font-size="20" font-family="sans-serif" font-weight="bold">R</text>
+
+</svg>

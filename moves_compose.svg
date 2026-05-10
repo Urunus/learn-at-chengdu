@@ -1,0 +1,59 @@
+<svg width="500" height="450" viewBox="0 0 500 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义箭头标记 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#000" />
+    </marker>
+    <!-- 定义虚线样式 -->
+    <style>
+      .dashed { stroke-dasharray: 5,5; }
+      .label { font-family: "Times New Roman", serif; font-size: 24px; fill: #000; }
+      .axis-label { font-family: "Times New Roman", serif; font-size: 28px; font-weight: bold; fill: #000; }
+    </style>
+  </defs>
+
+  <!-- 坐标轴 -->
+  <!-- Y轴 -->
+  <line x1="50" y1="400" x2="50" y2="20" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- X轴 -->
+  <line x1="50" y1="400" x2="480" y2="400" stroke="#000" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- 坐标轴文字 -->
+  <text x="30" y="25" class="axis-label">y</text>
+  <text x="485" y="415" class="axis-label">x</text>
+  <text x="35" y="415" class="label">O</text>
+
+  <!-- 角度 theta 弧线 -->
+  <path d="M 80,400 A 40,40 0 0 0 70,375" fill="none" stroke="#000" stroke-width="1"/>
+  <text x="80" y="385" class="label" font-size="20">θ</text>
+
+  <!-- 1. 矢量 v0t (斜向上的直线位移) -->
+  <!-- 起点(50,400) -> 终点(300,50) -->
+  <line x1="50" y1="400" x2="300" y2="50"  class="dashed" stroke="#000" stroke-width="1" marker-end="url(#arrow)" />
+  <!-- v0t 标签 -->
+  <text x="90" y="230" class="label" transform="rotate(-55 140,200)" font-size="26" font-weight="bold">v<tspan dy="5" font-size="12">0</tspan><tspan dy="-5" font-size="26">t</tspan></text>
+
+  <!-- 2. 矢量 1/2gt^2 (竖直向下的重力位移) -->
+  <!-- 起点(300,50) -> 终点(300,280) -->
+  <line x1="300" y1="50" x2="300" y2="330"  class="dashed" stroke="#000" stroke-width="1" marker-end="url(#arrow)" />
+  <!-- 1/2gt^2 标签 -->
+  <text x="310" y="160" class="label" font-size="26" font-weight="bold">
+    <tspan x="310" dy="0">1</tspan>
+    <tspan x="328" dy="12">gt²</tspan><!--12pt down -->
+    <tspan x="305" dy="0">—</tspan><!--same as above -->
+    <tspan x="310" dy="14">2</tspan><!--dowm 14pt more -->
+    <!-- dy is accumulated, why? -->
+  </text>
+
+  <!-- 3. 实际轨迹 r (抛物线) -->
+  <!-- 使用贝塞尔曲线模拟抛物线 -->
+  <path d="M 50,400 C 150,250 260,250 360,400" fill="none" stroke="#000" stroke-width="2"/>
+  <!-- r 标签 -->
+  <text x="180" y="355" class="label" font-size="24" font-weight="bold">r</text>
+
+  <!-- 辅助线 (虚线，用于展示矢量加法) -->
+  <!-- 从原点指向抛物线终点的矢量 r 的直线路径 (可选，图中未明确画出这根实线，但隐含存在) -->
+  <!-- 从v0t顶端指向r顶端的竖直虚线 (即重力位移的平行移动) -->
+  <line x1="50" y1="400" x2="300" y2="330" stroke="#000" stroke-width="2"  marker-end="url(#arrow)"/>
+
+</svg>
